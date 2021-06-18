@@ -1,0 +1,102 @@
+:root{
+    --color-header:#011826;
+    --color-nav: #049DBF;
+    --color-nav-dark: #02687F;
+    --color-article:#03658C;
+    --color-aside:#F1F2EB;
+    --color-footer:#023859;
+    --color-white:#FFF;
+    --color-black:#000;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* vh-->viewport height
+                           vw-->viewport width*/
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;/*Roboto;*/
+}
+.main-header{
+    background-color: var(--color-header);
+    color:var(--color-white);
+    line-height: 5;
+    text-align:center;
+    /* *** con flexbox ***
+    height:80px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:center;
+    align-content:center*/
+}
+.main-nav{
+    background-color: var(--color-nav);   
+}
+@media screen and (min-width:768px) {
+    .nav-container{
+        display: flex;
+    }    
+    .nav-container__item{
+        flex-grow: 1;  
+     }
+}
+.nav-container__item{
+   text-align: center;
+   line-height: 2.5;
+   border-bottom: 1px solid var(--color-white);
+}
+.nav-container__item:hover{
+    background-color: var(--color-nav-dark);        
+ }
+ .nav-container__link{
+    color: var(--color-white);
+    line-height: 2.5;
+    display: block;
+ }
+.main-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+@media screen and (min-width:1024px) {
+    .main-container{
+        display: flex;
+        flex-direction:row;
+    }
+    .main-container__article{
+        /*setea el width  si flex-direction:row*/
+        /*setea el height si flex-direction:column*/
+        flex-basis: 75%;
+    }
+    .main-container__aside{
+        flex-basis: 25%;
+    }
+}
+.main-container__article, .main-container__aside{
+    background-color: var(--color-article);
+    color: var(--color-white);
+    display: flex;    
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;    
+}
+.main-container__aside{
+    background-color: var(--color-aside);
+    color: var(--color-black);
+    /*display: flex;    
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;*/
+}
+.main-footer{
+    background-color: var(--color-footer);
+    color: var(--color-white);
+    line-height: 5;
+    text-align: center;
+    margin-top: auto;
+}
